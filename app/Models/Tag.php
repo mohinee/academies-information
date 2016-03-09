@@ -7,4 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     protected $fillable =['name'];
+
+
+    public function academy(){
+    	return $this->belongsToMany('App\Models\Academy');
+    }
+
+    public function getName(){
+    	$this->name;
+    }
+
+    public function getAcademy(){
+    	$this->academy;
+    }
+
+
 }

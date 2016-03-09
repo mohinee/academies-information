@@ -1,7 +1,8 @@
 <?php
 
-Route::get('/','HomeController@index');
+Route::get('/','HomeController@explore');
 Route::get('/explore','HomeController@explore');
 Route::get('/academy/create','AcademiesController@create')->middleware(['web']);
 Route::post('/academy','AcademiesController@store');
-Route::get('/academy/{academyid}','AcademiesController@show');
+Route::post('/academy/show','AcademiesController@show');
+Route::get('/academy/showdetails/{id}','AcademiesController@index');

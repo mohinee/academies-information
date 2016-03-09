@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Models\Academy;
+
 class HomeController extends Controller
 {
 	public function index(){
-		return redirect('/explore');
+		
 	}
     public function explore(){
-    	return view('explore');
+
+    	$academies = Academy::all();
+
+    	return view('explore',compact('academies'));
     }
 
 }

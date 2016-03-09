@@ -16,7 +16,7 @@
        </ul>
    </div>
 @endif
-<form action="/academy" method="POST">
+<form action="/academy" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="abc@gef.com">
@@ -55,7 +55,7 @@
   </div>
   <div class="form-group">
     <label for="images">Image</label>
-    <input type="file" id="images" name="images" value="momButterflyrainbow-1.jpg">
+    <input type="file" id="images" name="images">
   </div>
   <input type="submit" class="btn btn-default" value="Submit"/>
 </form>
