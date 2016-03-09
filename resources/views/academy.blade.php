@@ -12,7 +12,7 @@
     {!! $academy->getName() !!}
   </div>
   <div class="form-group">
-    <img style="height:200px;width:200px;" src = {!! $academy->getImages() !!}  />
+    <img style="height:30%;width:75%;" src = {{ URL::to('/'.$academy->getImages()) }}  />
   </div>
   <div class="form-group">
     <label for="time_slots">Timeslots: </label>

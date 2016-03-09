@@ -61,6 +61,11 @@ class Academy extends Model
         return $acad->getId();
     }
 
+    public function setImagesAttribute($value){
+        
+        $this->attributes['images'] = 'images/'.$value->getClientOriginalName();
+    }
+
 
 
 }
