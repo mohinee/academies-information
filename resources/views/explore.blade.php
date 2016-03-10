@@ -21,7 +21,6 @@
 
     <script>
 
-    var academies = <?php echo $academies; ?>;
     
     	function initMap() {
 		  var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,26 +39,27 @@
 
 		 
 
-		  <?php foreach ($academies as $academy) { ?>
+		  @foreach ($academies as $academy) 
+			
 
 		  	var marker = new google.maps.Marker({
-		      position: new google.maps.LatLng(<?php echo $academy->getLatitude(); ?>, <?php echo $academy->getLongitude(); ?>),
+		      position: new google.maps.LatLng({{ $academy->getLatitude() }}, {{ $academy->getLongitude() }}),
 		      map: map,
-		      label: "<?php echo $academy->getName(); ?>"
+		      label: "{{ $academy->getName() }}"
 		    });
 
 		    marker.addListener('click', function(e) {
 
 		    $.post("/academy/show",
 		    {
-		      id: <?php echo $academy->getId(); ?>
+		      id: {{ $academy->getId() }}
 		    });
 		    $(document).ajaxSuccess(function(data){
- 				 window.location.href = "/academy/showdetails/"+<?php echo $academy->getId(); ?>
+ 				 window.location.href = "/academy/showdetails/"+{{ $academy->getId() }}
 			});	
 		  });
 
-		  <?php } ?>
+		 @endforeach
 		  
 
 		   
