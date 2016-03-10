@@ -2,10 +2,11 @@
 @section('header')
 
 <title>{!! $academy->getName() !!}</title>
+<center>
 <h1> Academy Details</h1>
 
-<a href="/academy/create">Create Academy</a>                                  <a href="/explore">Explore</a>
-
+<a class="btn btn-default" href="/academy/create">Create Academy</a><td></td><a class="btn btn-default" href="/explore">Explore</a>
+</center>
 @stop
 
 @section('content')

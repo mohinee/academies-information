@@ -2,26 +2,21 @@
 @section('header')
 
 <title>Explore</title>
-<h1>Explore All Academies</h1>   
-<a href="/academy/create">Create Academy</a>       
+<center><h1>Explore All Academies</h1>   
+<a class="btn btn-default" href="/academy/create">Create Academy</a>       
+</center>
+    
+@stop
 
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+@section('content')
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Simple markers</title>
+    <
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
       #map {
         height: 500px;
       }
     </style>
-
-@stop
-
-@section('content')
 
     <div id="map"></div>
 
