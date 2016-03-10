@@ -73,9 +73,9 @@ class AcademiesController extends Controller
 		 $academy = Academy::findAcademy($id);
 		 $data = array();
 		  Mail::send('emails.admin', $data, function ($message) {
-  			  $message->from('mohinee@gmail.com', 'Mohinee');
+  			  $message->from('mohineeklever2016@gmail.com');
 
-			  $message->to('mohineet@gmail.com');
+			  $message->to('mohineeklever2016@gmail.com');
 
 			  $message->subject('Hi');
 
