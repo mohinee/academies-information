@@ -1,7 +1,10 @@
 @extends('app')
 @section('header')
 
-<title>explore</title>
+<title>Explore</title>
+<h1>Explore All Academies</h1>   
+<a href="/academy/create">Create Academy</a>       
+
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Simple markers</title>
@@ -20,9 +23,6 @@
 
 @section('content')
 
-
-<div>Explore</div>
-
     <div id="map"></div>
 
     <script>
@@ -31,7 +31,7 @@
     
     	function initMap() {
 		  var map = new google.maps.Map(document.getElementById('map'), {
-		    center: {lat: 23, lng: 78},
+		    center: {lat: 0, lng: 0},
 		    zoom: 3,
 		    styles: [{
 		      featureType: 'poi',
@@ -61,8 +61,7 @@
 		      id: <?php echo $academy->getId(); ?>
 		    });
 		    $(document).ajaxSuccess(function(data){
-		     		console.log(data);
- 				 window.location.href = "/academy/showdetails/"+data.isTrigger;
+ 				 window.location.href = "/academy/showdetails/"+<?php echo $academy->getId(); ?>
 			});	
 		  });
 
@@ -77,7 +76,4 @@
     &libraries=visualization&callback=initMap">
     </script>
 
-
-
-<a href="/academy/create">CREATE ACADEMY</a>
 @stop

@@ -1,7 +1,10 @@
 @extends('app')
 @section('header')
 
-<title>create</title>
+<title>Create New Academy</title>
+<h1>Create New Academy</h1>
+<a href="/explore">Explore</a>
+
 
 @stop
 

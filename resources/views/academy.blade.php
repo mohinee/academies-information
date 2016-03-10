@@ -2,6 +2,9 @@
 @section('header')
 
 <title>{!! $academy->getName() !!}</title>
+<h1> Academy Details</h1>
+
+<a href="/academy/create">Create Academy</a>                                  <a href="/explore">Explore</a>
 
 @stop
 

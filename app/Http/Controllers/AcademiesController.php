@@ -9,6 +9,7 @@ use App\Models\Academy;
 use App\Models\Tag;
 use Validator;
 use Storage;
+use Mail;
 
 class AcademiesController extends Controller
 {
@@ -24,12 +25,12 @@ class AcademiesController extends Controller
  	 		'name'=>'required',
  	 		'user_name'=>'required|unique:academies', 
  	 		'email'=>'required|unique:academies|email',
- 	 		//'images'=>'required|image',
+ 	 		'images'=>'required|image',
  	 		'time_slots'=>'required',
  	 		'phone'=>'required|numeric',
  	 		'description'=>'required',
- 	 		'latitude'=>'required|numeric',
- 	 		'longitude'=>'required|numeric',
+ 	 		'latitude'=>'required|numeric|min:-85|max:85',
+ 	 		'longitude'=>'required|numeric|min:-180|max:180',
  	 		'tags' => 'required'
  	 		]);
 
@@ -70,6 +71,16 @@ class AcademiesController extends Controller
 	public function index($id){
 
 		 $academy = Academy::findAcademy($id);
+		 $data = array();
+		  Mail::send('emails.admin', $data, function ($message) {
+  			  $message->from('mohinee@gmail.com', 'Mohinee');
+
+			  $message->to('mohineet@gmail.com');
+
+			  $message->subject('Hi');
+
+			  $message->getSwiftMessage();
+		});
 
  		 return view('academy',compact('academy'));
  	}
